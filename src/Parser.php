@@ -650,6 +650,11 @@ class Parser
             $encodingType = $encodingType[0];
         }
 
+        //fork fix
+        if (is_array($encodingType)) {
+            $encodingType = $encodingType[0];
+        }
+
         $encodingType = strtolower($encodingType);
         if ($encodingType == 'base64') {
             return base64_decode($encodedString);
